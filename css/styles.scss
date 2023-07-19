@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@500&display=swap');
+
+:root {
+    --wall-color: #74bd4d;
+    --table-color: #b86e47;
+    --floor-color: #464030;
+    --logo-orange: #e44e1b;
+    --logo-purple: #951b81;
+    --background-dark: #131417;
+    --background-card: #3c3d42;
+}
+
+/* Global */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--wall-color);
+    background-color: var(--background-dark);
+    line-height: 1.6;
+    animation: fadeIn ease 1s;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--wall-color);
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+p {
+    text-indent: 40px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    background-color: var(--background-card);
+    border-radius: 8px;
+    box-shadow: 10px 3px 10px var(--background-card);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 60%;
+}
+
+/* Header */
+.navbar {
+    height: 200px;
+}
+
+.navbar h1 {
+    font-size: 3rem;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 0px 5px;
+}
+
+.navbar a:hover {
+    border-left: 1px var(--logo-purple) solid;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+/* Banner */
+.banner {
+    animation: fadeIn ease 3s;
+}
+
+.banner .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-height: 800px;
+}
+
+.banner img {
+    width: 80%;
+    margin: 0 auto;
+    object-fit: cover;
+    min-height: 100%;
+}
+
+
+/* Content */
+#game-area {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#player-area,
+#computer-area {
+    width: 100%; 
+    text-align: center;
+}
+
+#player-dice,
+#computer-dice {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#player-dice img,
+#computer-dice img {
+    width: 100px; 
+    height: 100px; 
+}
+
+#roll-button,
+#reset-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--logo-orange);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#roll-button:hover,
+#reset-button:hover {
+    background-color: var(--logo-purple);
+}
+
+#winner-message {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+.footer-divider {
+    border-top: 2px solid var(--wall-color);
+    border-radius: 3px;
+    max-width: 90%;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+.footer .container {
+    max-width: 1100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0px auto;
+    margin-top: 10px;
+    color: var(--wall-color);
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer a {
+    padding: 0px 10px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+/* Tablets */
+@media(max-width: 945px) {
+    .flex,
+    .container {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .footer .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media(max-width: 500px) {
+    .container,
+    .card {
+        margin: 10px auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .banner img {
+        width: 100%;
+        max-height: auto;
+    }
+
+    .navbar {
+        height: 200px;
+        padding: 0px;
+        margin: 0px 2px;
+    }
+
+    .navbar a {
+        padding: 5px;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        padding: 10px;
+    }
+
+    
+
+}
